@@ -1,0 +1,5 @@
+<library path="test_library">
+  <class name="my_storage_plugin" type="Storage" base_class_type="StorageInterface">
+    <description>This is a test.</description>
+  </class>
+</library>
