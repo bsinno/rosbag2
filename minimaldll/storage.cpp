@@ -14,6 +14,10 @@
 
 #include "storage.hpp"
 
+Storage::~Storage()
+{
+}
+
 uint64_t Storage::random_number()
 {
   return 4;

@@ -20,12 +20,15 @@
 class StorageInterface
 {
 public:
+  virtual ~StorageInterface() = default;
+  
   virtual uint64_t random_number() = 0;
 };
 
 class Storage : public StorageInterface
 {
 public:
+  ~Storage() override;
   uint64_t random_number() override;
 };
 
