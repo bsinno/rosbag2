@@ -26,10 +26,13 @@ class PlayVerb(VerbExtension):
     def add_arguments(self, parser, cli_name):  # noqa: D102
         parser.add_argument(
             'bag_file', help='bag file to replay')
+        parser.add_argument(
+            '-s', '--storage', default='sqlite3',
+            help='storage identifier to be used, defaults to "sqlite3"')
 
     def main(self, *, args):  # noqa: D102
         bag_file = args.bag_file
         if not os.path.exists(bag_file):
             return "Error: bag file '{}' does not exist!".format(bag_file)
 
-        rosbag2_transport_py.play(uri=bag_file, storage_id='sqlite3')
+        rosbag2_transport_py.play(uri=bag_file, storage_id=args.storage)
